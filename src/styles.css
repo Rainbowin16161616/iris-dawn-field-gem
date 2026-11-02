@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Source Sans 3", "Segoe UI", sans-serif;
+  --font-display: "Newsreader", Georgia, serif;
+
+  --color-background: #f3f1ec;
+  --color-surface: #faf9f6;
+  --color-ink: #1c211e;
+  --color-muted: #5c655e;
+  --color-faint: #8a918b;
+  --color-line: #e2ddd2;
+  --color-line-strong: #cfc8b8;
+  --color-accent: #1f3d36;
+  --color-accent-fg: #f4f7f5;
+  --color-accent-soft: #e4eee9;
+  --color-ok: #1b6842;
+  --color-ok-soft: #e4f3ea;
+  --color-warn: #8a5a12;
+  --color-warn-soft: #f8f1e2;
+  --color-danger: #8d3434;
+  --color-danger-soft: #f8e8e6;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.5rem;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    background: var(--color-background);
+    color: var(--color-ink);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media screen {
+  .sheet-closed {
+    display: none;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  header,
+  .no-print {
+    display: none !important;
+  }
+
+  .sheet-closed {
+    display: block !important;
+  }
+
+  #liquidacion {
+    position: static;
+    width: 100%;
+  }
+}
